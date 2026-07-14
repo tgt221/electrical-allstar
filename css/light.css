@@ -1,0 +1,123 @@
+/* =====================================================
+   ELECTRICAL ALLSTAR — light concept overrides
+   Loaded after style.css on light.html only.
+   Brand ratio flips to the white base: 60% white,
+   30% red, 10% gold (deepened for contrast on light).
+   ===================================================== */
+
+:root{
+  --bg:#F3F4F6;
+  --panel:#FFFFFF;
+  --line:rgba(26,26,26,.14);
+  --ink:#1A1A1A;
+  --muted:#5A6472;
+  --gold-deep:#B8860B;
+}
+
+body{color:var(--ink);background:var(--bg)}
+body::before{
+  background-image:
+    linear-gradient(rgba(26,26,26,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(26,26,26,.045) 1px,transparent 1px);
+}
+
+/* ---------- shared ---------- */
+.eyebrow{color:var(--red)}
+.live-dot{background:var(--red)}
+.h2 em{text-shadow:none}
+.lead{color:var(--muted)}
+.btn-ghost{border-color:rgba(26,26,26,.25);color:var(--ink);background:rgba(255,255,255,.65)}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+
+/* ---------- preloader ---------- */
+.preloader-status{color:var(--muted)}
+.preloader-bar{background:rgba(26,26,26,.12)}
+
+/* ---------- nav ---------- */
+.nav.scrolled{background:rgba(255,255,255,.88)}
+.nav-links a{color:#4A5158}
+.nav-links a:hover{color:#000}
+.nav-links a::after{background:var(--red)}
+
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(1100px 700px at 68% 38%,#FBE9EC 0%,var(--bg) 60%)}
+.hero-vignette{
+  background:
+    linear-gradient(90deg,rgba(243,244,246,.92) 0%,rgba(243,244,246,.5) 42%,rgba(243,244,246,.05) 70%),
+    linear-gradient(180deg,rgba(243,244,246,.6) 0%,rgba(243,244,246,0) 24%,rgba(243,244,246,0) 70%,var(--bg) 100%);
+}
+.hero-line em{text-shadow:none}
+.hero-tag{color:var(--red)}
+.hero-sub{color:var(--muted)}
+.hero-badge img{
+  filter:
+    drop-shadow(0 22px 34px rgba(26,26,26,.28))
+    drop-shadow(0 0 34px rgba(200,16,46,.18));
+}
+.scroll-cue{color:var(--muted)}
+.scroll-cue-track{border-color:rgba(26,26,26,.3)}
+.scroll-cue-dot{background:var(--red)}
+
+/* ---------- why / circuit ---------- */
+.circuit-base{stroke:rgba(26,26,26,.12)}
+.circuit-live{stroke:var(--gold-deep);filter:drop-shadow(0 0 4px rgba(184,134,11,.7))}
+.circuit-pulse{fill:var(--red);filter:drop-shadow(0 0 8px rgba(200,16,46,.8))}
+
+.trust-card,.service-card,.review-card{
+  background:#fff;border-color:var(--line);
+  box-shadow:0 6px 24px rgba(26,26,26,.06);
+}
+.trust-card:hover,.service-card:hover{
+  border-color:rgba(184,134,11,.55);
+  box-shadow:0 20px 44px rgba(26,26,26,.14);
+}
+.trust-icon{color:var(--gold-deep);background:rgba(184,134,11,.08);border-color:rgba(184,134,11,.3)}
+.trust-card p,.service-card p{color:var(--muted)}
+
+/* ---------- services ---------- */
+.services{
+  background:
+    radial-gradient(900px 500px at 15% 0%,rgba(200,16,46,.07),transparent 60%),
+    #E9EBEF;
+}
+.breaker-label{color:#8A919C}
+.breaker-label b{color:#C5CAD2}
+.service-card:hover .breaker-label b{color:var(--gold-deep);text-shadow:none}
+
+/* ---------- truck ---------- */
+.truck-media{box-shadow:0 24px 60px rgba(26,26,26,.18)}
+
+/* ---------- work ---------- */
+.work{background:radial-gradient(1000px 600px at 85% 20%,rgba(184,134,11,.05),transparent 60%),var(--bg)}
+.work-card{box-shadow:0 6px 24px rgba(26,26,26,.07)}
+.work-card figcaption{color:var(--muted)}
+.work-card figcaption b{color:var(--gold-deep)}
+
+/* ---------- reviews ---------- */
+.reviews{background:#E9EBEF}
+.stars{color:var(--gold-deep);text-shadow:none}
+.review-card p{color:#3A4048}
+.review-card footer{color:var(--muted)}
+.review-card:hover{border-color:rgba(200,16,46,.4)}
+
+/* ---------- areas ---------- */
+.pills span{background:#fff;border-color:var(--line);color:#3A4048;box-shadow:0 2px 10px rgba(26,26,26,.05)}
+.pills span:hover{border-color:var(--red);color:var(--red);box-shadow:0 10px 24px rgba(26,26,26,.12)}
+.areas-bolt{color:rgba(200,16,46,.07)}
+
+/* ---------- contact (dark card stays dark for pop) ---------- */
+.contact{
+  background:
+    radial-gradient(900px 560px at 20% 100%,rgba(200,16,46,.08),transparent 60%),
+    radial-gradient(700px 400px at 90% 0%,rgba(184,134,11,.05),transparent 60%),
+    var(--bg);
+}
+.contact-phone{color:var(--red);text-shadow:none}
+.contact-phone:hover{text-shadow:none}
+.contact-card{color:#fff} /* card stays dark; don't inherit light-page ink */
+
+/* ---------- footer ---------- */
+.footer{background:#fff}
+.footer-links a{color:#4A5158}
+.footer-links a:hover{color:var(--red)}
+.footer-note{color:#8A919C}
