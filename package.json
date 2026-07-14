@@ -5,7 +5,7 @@
   "description": "Award-style single-page site for Electrical Allstar — East Bay residential electrician. Static HTML/CSS/JS with GSAP + Three.js loaded via CDN (no build step).",
   "homepage": "https://github.com/tgt221/electrical-allstar",
   "scripts": {
-    "build": "echo \"No build step — this is a static HTML site. Publish the repository root.\" && exit 0",
+    "build": "node build.mjs",
     "dev": "npx --yes serve . --listen 8321"
   },
   "keywords": [
