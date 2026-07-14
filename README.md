@@ -14,12 +14,12 @@ small flag/override on top:
 
 | Page             | Concept                    | How it differs |
 |------------------|----------------------------|----------------|
-| `index.html`     | **Dark — breaker box**     | Default. 3D electrical breaker panel in the hero. |
-| `light.html`     | **Light**                  | Adds `css/light.css` + `window.ALLSTAR_LIGHT` (Three.js scene switches to normal blending / deeper tones for a white background). |
+| `index.html`     | **Light** (live homepage)  | Adds `css/light.css` + `window.ALLSTAR_LIGHT` (Three.js scene switches to normal blending / deeper tones for a white background). Served at the site root. |
+| `dark.html`      | **Dark — breaker box**     | 3D electrical breaker panel in the hero. |
 | `dark-star.html` | **Dark — Allstar star**    | Sets `window.ALLSTAR_SCENE = "star"`; hero centerpiece becomes a spinning 3D star with orbiting energy rings. |
 
-> ⚠️ The variants are generated from `index.html`. If you change shared content in
-> `index.html`, mirror the edit into `light.html` and `dark-star.html`.
+> ⚠️ The variants share `css/style.css`, `js/main.js`, and `assets/`. If you change
+> shared content in `index.html`, mirror the edit into `dark.html` and `dark-star.html`.
 
 ## Run locally
 
@@ -29,12 +29,14 @@ Any static file server works. This repo includes a dependency-free PowerShell se
 powershell -NoProfile -ExecutionPolicy Bypass -File serve.ps1 -Port 8321
 ```
 
-Then open <http://localhost:8321/> (dark), `/light.html`, or `/dark-star.html`.
+Then open <http://localhost:8321/> (light homepage), `/dark.html`, or `/dark-star.html`.
 
 ## Structure
 
 ```
-index.html / light.html / dark-star.html   # three concept pages
+index.html        # LIGHT concept — live homepage (served at root)
+dark.html         # dark breaker-box concept
+dark-star.html    # dark Allstar-star concept
 css/  style.css   # shared theme
       light.css   # light-concept overrides
 js/   main.js     # GSAP scroll + Three.js hero scenes
