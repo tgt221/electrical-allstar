@@ -47,4 +47,4 @@ serve.ps1         # local static server
 
 ## Contact
 
-Electrical Allstar · 510-706-1287 · Timothy.electricalallstars@gmail.com
+Electrical Allstar · 510-993-6764 · info@electricalallstar.com
