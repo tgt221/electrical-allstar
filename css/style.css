@@ -330,20 +330,23 @@ main{position:relative;z-index:1}
   width:max-content;will-change:transform;
 }
 .work-card{
-  width:clamp(300px,38vw,560px);flex:none;border-radius:22px;overflow:hidden;
+  width:clamp(300px,36vw,520px);flex:none;border-radius:22px;overflow:hidden;
   background:var(--panel);border:1px solid var(--line);
-  transition:border-color .3s ease;
+  transition:border-color .3s ease,box-shadow .3s ease;
+  display:flex;flex-direction:column;
 }
-.work-card:hover{border-color:rgba(245,197,24,.5)}
-.work-card img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
-.work-card figcaption{
-  display:flex;align-items:center;gap:14px;padding:16px 18px;
-  font-family:var(--mont);font-weight:600;font-size:.88rem;color:var(--steel);
+.work-card:hover{border-color:rgba(245,197,24,.5);box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.work-card img{width:100%;aspect-ratio:16/10;object-fit:cover;flex:none}
+.work-card figcaption{padding:22px 24px 26px;display:block}
+.work-card .work-num{
+  display:block;font-family:var(--bebas);font-weight:400;font-size:1.7rem;
+  color:var(--gold);line-height:1;letter-spacing:.05em;margin-bottom:6px;
 }
-.work-card figcaption b{
-  font-family:var(--bebas);font-weight:400;font-size:1.5rem;color:var(--gold);
-  line-height:1;letter-spacing:.04em;
+.work-card figcaption h3{
+  font-family:var(--mont);font-weight:800;font-size:1.14rem;
+  color:var(--ink,#fff);margin-bottom:10px;letter-spacing:.01em;
 }
+.work-card figcaption p{color:var(--steel);font-size:.93rem;line-height:1.6;margin:0}
 
 /* =====================================================
    REVIEWS
@@ -433,6 +436,63 @@ main{position:relative;z-index:1}
 .footer-note{font-size:.82rem;color:#6a7078}
 
 /* =====================================================
+   STAT BAR (Why section)
+   ===================================================== */
+.stat-bar{
+  list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+  margin:0 0 34px;padding:22px;border-radius:18px;
+  background:var(--panel);border:1px solid var(--line);
+}
+.stat-bar li{display:flex;align-items:center;gap:12px;min-width:0}
+.stat-bar li + li{border-left:1px solid var(--line);padding-left:14px}
+.stat-ico{font-size:1.5rem;flex:none;line-height:1}
+.stat-bar span{font-family:var(--mont);font-weight:600;font-size:.82rem;color:var(--steel);line-height:1.35}
+.stat-bar b{display:block;color:var(--ink,#fff);font-weight:800;font-size:.95rem}
+
+.trust-emoji{font-size:26px;line-height:1}
+
+/* =====================================================
+   TRUST BADGES / CREDENTIALS
+   ===================================================== */
+.trust-badges{border-top:1px solid var(--line)}
+.badge-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:8px 0 30px;
+}
+.badge-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  padding:26px 20px;text-align:center;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.badge-card:hover{transform:translateY(-6px);border-color:rgba(200,16,46,.4);box-shadow:0 18px 44px rgba(0,0,0,.22)}
+.badge-logo{height:78px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.badge-logo img{max-height:78px;max-width:80%;width:auto;object-fit:contain}
+.badge-card h3{font-family:var(--mont);font-weight:800;font-size:.98rem;color:var(--red);margin-bottom:8px}
+.badge-card p{color:var(--steel);font-size:.86rem;line-height:1.55;margin:0}
+
+.badge-strip{
+  list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  padding:26px;border:1.5px solid var(--line);border-radius:18px;
+}
+.badge-strip li{display:flex;align-items:flex-start;gap:12px}
+.badge-strip-ico{font-size:1.5rem;flex:none;line-height:1.1}
+.badge-strip b{display:block;font-family:var(--mont);font-weight:800;font-size:.92rem;color:var(--ink,#fff);margin-bottom:3px}
+.badge-strip div{font-size:.82rem;color:var(--steel);line-height:1.5}
+
+/* =====================================================
+   CONTACT ASSURANCE STRIP
+   ===================================================== */
+.assure-strip{
+  list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  margin-top:44px;padding:26px;border-radius:18px;
+  background:var(--panel);border:1px solid var(--line);
+}
+.assure-strip li{display:flex;align-items:flex-start;gap:12px}
+.assure-strip li + li{border-left:1px solid var(--line);padding-left:18px}
+.assure-ico{font-size:1.5rem;flex:none;line-height:1.1}
+.assure-strip b{display:block;font-family:var(--mont);font-weight:800;font-size:.92rem;color:var(--ink,#fff);margin-bottom:3px}
+.assure-strip span{font-size:.82rem;color:var(--steel);line-height:1.5}
+
+/* =====================================================
    RESPONSIVE
    ===================================================== */
 @media (max-width:1020px){
@@ -444,12 +504,17 @@ main{position:relative;z-index:1}
   .trust-grid,.service-grid,.review-grid{grid-template-columns:repeat(2,1fr)}
   .truck-grid,.contact-grid{grid-template-columns:1fr}
   .nav-links{display:none}
+  .badge-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-bar,.badge-strip,.assure-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-bar li + li,.assure-strip li + li{border-left:none;padding-left:0}
 }
 @media (max-width:640px){
   .trust-grid,.service-grid,.review-grid{grid-template-columns:1fr}
   .work-track{flex-direction:column;width:auto;padding-bottom:40px}
   .work-card{width:100%}
-  .work-card img{aspect-ratio:4/3}
+  .work-card img{aspect-ratio:16/10}
+  .badge-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-bar,.badge-strip,.assure-strip{grid-template-columns:1fr}
   .nav{padding-left:14px;padding-right:14px}
   .nav-word{font-size:1.08rem}
   .nav-bolt{width:19px;height:19px}

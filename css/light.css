@@ -48,7 +48,7 @@ body::before{
 }
 .hero-line em{text-shadow:none}
 .hero-tag{color:var(--red)}
-.hero-sub{color:var(--muted)}
+.hero-sub{color:#14181d;font-weight:600}
 .hero-badge img{
   filter:
     drop-shadow(0 22px 34px rgba(26,26,26,.28))
@@ -115,6 +115,21 @@ body::before{
 .contact-phone{color:var(--red);text-shadow:none}
 .contact-phone:hover{text-shadow:none}
 .contact-card{color:#fff} /* card stays dark; don't inherit light-page ink */
+
+.work-card .work-num{color:var(--gold-deep)}
+
+/* ---------- reviews: masonry for the 4 real testimonials ---------- */
+.review-grid{display:block;column-count:2;column-gap:22px}
+.review-card{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 22px}
+.review-card p{margin-bottom:14px}
+@media (max-width:760px){ .review-grid{column-count:1} }
+
+/* ---------- stat bar + credential badges + assurance strip ---------- */
+.stat-bar,.badge-strip,.assure-strip{box-shadow:0 6px 24px rgba(26,26,26,.05)}
+.badge-card{box-shadow:0 6px 20px rgba(26,26,26,.06)}
+.stat-bar b,.badge-strip b,.assure-strip b,.work-card figcaption h3{color:var(--ink)}
+.stat-bar span,.badge-card p,.badge-strip div,.assure-strip span,.work-card figcaption p{color:var(--muted)}
+.trust-badges{background:#E9EBEF;border-top:1px solid var(--line)}
 
 /* ---------- footer ---------- */
 .footer{background:#fff}
