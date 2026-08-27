@@ -445,9 +445,9 @@
       .to('[data-hero="cta"]', { opacity: 1, y: 0, duration: .7 }, 1.05)
       .to('[data-hero="badge"]', { opacity: 1, y: 0, duration: 1, ease: "back.out(1.4)" }, 0.7);
 
-    // gentle float on badge
+    // gentle float on badge (straight up-and-down, no tilt)
     gsap.to(".hero-badge", {
-      y: -14, rotate: 1.4, duration: 3.2,
+      y: -18, duration: 3.4,
       ease: "sine.inOut", yoyo: true, repeat: -1
     });
   }

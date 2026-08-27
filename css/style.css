@@ -30,13 +30,15 @@ body{
   font-size:16px;
   line-height:1.65;
   overflow-x:hidden;
+  position:relative;
   -webkit-font-smoothing:antialiased;
 }
-body::before{ /* faint blueprint grid over everything */
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+body::before{ /* faint blueprint grid over everything — absolute so it scrolls
+                 with the page (a fixed layer shimmers/doubles on scaled displays) */
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
   background-image:
-    linear-gradient(rgba(168,178,189,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(168,178,189,.035) 1px,transparent 1px);
+    linear-gradient(rgba(168,178,189,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(168,178,189,.04) 1px,transparent 1px);
   background-size:56px 56px;
 }
 img{max-width:100%;display:block}
@@ -131,6 +133,7 @@ main{position:relative;z-index:1}
 }
 .nav-brand{display:flex;align-items:center;gap:10px;flex:none}
 .nav-bolt{width:24px;height:24px;color:var(--gold);filter:drop-shadow(0 0 8px rgba(245,197,24,.7))}
+.nav-logo{width:38px;height:38px;object-fit:contain;flex:none;filter:drop-shadow(0 2px 4px rgba(0,0,0,.28))}
 .nav-word{font-family:var(--bebas);font-size:1.35rem;letter-spacing:.1em;line-height:1;white-space:nowrap}
 .nav-word em{font-style:normal;color:var(--red-hot)}
 .nav-links{display:flex;gap:clamp(14px,2.4vw,34px)}
@@ -163,7 +166,7 @@ main{position:relative;z-index:1}
 }
 .hero-inner{
   position:relative;z-index:2;width:min(92%,var(--max));margin:0 auto;
-  display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
   padding:120px 0 80px;
 }
 .hero-title{
@@ -183,8 +186,7 @@ main{position:relative;z-index:1}
 
 .hero-badge-wrap{display:flex;justify-content:center;perspective:900px}
 .hero-badge{
-  width:min(380px,76vw);
-  transform:rotate(3deg);
+  width:min(520px,48vw);
   will-change:transform;
 }
 .hero-badge img{
@@ -376,13 +378,13 @@ main{position:relative;z-index:1}
   width:420px;height:420px;color:rgba(200,16,46,.08);z-index:1;
 }
 .pills{display:flex;flex-wrap:wrap;gap:12px;max-width:820px}
-.pills span{
+.pills span,.pills a{
   font-family:var(--mont);font-weight:600;font-size:.9rem;
   padding:12px 22px;border-radius:999px;color:#e6e9ec;
   background:rgba(255,255,255,.035);border:1px solid var(--line);
   transition:border-color .3s,color .3s,box-shadow .3s,transform .3s;
 }
-.pills span:hover{
+.pills span:hover,.pills a:hover{
   border-color:var(--gold);color:var(--gold);transform:translateY(-3px);
   box-shadow:0 10px 30px rgba(0,0,0,.4),0 0 24px rgba(245,197,24,.15);
 }
@@ -500,7 +502,7 @@ main{position:relative;z-index:1}
   .hero-copy{display:flex;flex-direction:column;align-items:center}
   .eyebrow{justify-content:center}
   .hero-cta{justify-content:center}
-  .hero-badge{width:min(260px,64vw)}
+  .hero-badge{width:min(400px,84vw)}
   .trust-grid,.service-grid,.review-grid{grid-template-columns:repeat(2,1fr)}
   .truck-grid,.contact-grid{grid-template-columns:1fr}
   .nav-links{display:none}
@@ -518,6 +520,7 @@ main{position:relative;z-index:1}
   .nav{padding-left:14px;padding-right:14px}
   .nav-word{font-size:1.08rem}
   .nav-bolt{width:19px;height:19px}
+  .nav-logo{width:30px;height:30px}
   .nav-cta{padding:9px 13px;font-size:.74rem}
   .nav-cta svg{width:14px;height:14px}
   .contact-phone{font-size:3.2rem}
