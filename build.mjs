@@ -3,7 +3,7 @@
 import { rmSync, mkdirSync, cpSync } from "node:fs";
 
 const OUT = "dist";
-const ITEMS = ["index.html", "dark.html", "dark-star.html", "css", "js", "assets"];
+const ITEMS = ["index.html", "dark.html", "dark-star.html", "cities", "css", "js", "assets"];
 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT);
