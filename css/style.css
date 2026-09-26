@@ -436,6 +436,11 @@ main{position:relative;z-index:1}
 .footer-links a{font-family:var(--mont);font-weight:600;font-size:.84rem;color:var(--steel);transition:color .25s}
 .footer-links a:hover{color:var(--gold)}
 .footer-note{font-size:.82rem;color:#6a7078}
+.footer-credit{width:min(92%,var(--max));margin:26px auto 0;padding-top:16px;border-top:1px solid var(--line);text-align:center;font-size:.78rem;color:#6a7078;letter-spacing:.02em}
+.footer-credit a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.footer-credit a:hover{color:var(--gold)}
+.city-footbar .footer-credit,.ev-foot .footer-credit{width:auto;flex-basis:100%;margin:6px 0 0;padding-top:0;border-top:none;color:#9aa0a6;font-weight:600;font-size:.72rem;letter-spacing:.04em}
+.city-footbar .footer-credit a,.ev-foot .footer-credit a{color:#c8ccd1}
 
 /* =====================================================
    STAT BAR (Why section)

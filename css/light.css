@@ -136,3 +136,5 @@ body::before{
 .footer-links a{color:#4A5158}
 .footer-links a:hover{color:var(--red)}
 .footer-note{color:#8A919C}
+.footer-credit{color:#8A919C}
+.footer-credit a:hover{color:var(--red)}
