@@ -470,6 +470,10 @@ main{position:relative;z-index:1}
 .badge-logo img{max-height:78px;max-width:80%;width:auto;object-fit:contain}
 .badge-card h3{font-family:var(--mont);font-weight:800;font-size:.98rem;color:var(--red);margin-bottom:8px}
 .badge-card p{color:var(--steel);font-size:.86rem;line-height:1.55;margin:0}
+a.badge-card{display:block;color:inherit;text-decoration:none;cursor:pointer}
+.badge-card--link{border-color:rgba(200,16,46,.45)}
+.badge-more{display:inline-block;margin-top:10px;font-family:var(--mont);font-weight:800;font-size:.8rem;color:var(--red);letter-spacing:.02em}
+.badge-card--link:hover .badge-more{text-decoration:underline}
 
 .badge-strip{
   list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;

@@ -1,0 +1,129 @@
+/* =====================================================
+   ELECTRICAL ALLSTAR — Tesla / EV charging page
+   Reproduces the client's print flyer as a centered sheet.
+   Layered on style.css + light.css + city.css.
+   ===================================================== */
+
+.ev-sheet{max-width:1100px}
+.ev-pad{padding-left:clamp(18px,3.2vw,34px);padding-right:clamp(18px,3.2vw,34px)}
+.ev-sheet .ci{display:block;flex:none}
+
+/* ---------- HEADER ---------- */
+.ev-head{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;
+  padding-top:26px;padding-bottom:0;border-bottom:5px solid var(--red);
+}
+.ev-head-left{text-align:center;padding-bottom:26px}
+.ev-tesla-logo{height:46px;width:auto;margin:0 auto 14px;mix-blend-mode:multiply}
+.ev-cert{font-family:var(--mont);font-weight:800;color:var(--red);font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.15;margin-bottom:10px}
+.ev-head-left p{color:#3a4048;font-size:.98rem;line-height:1.5;max-width:260px;margin:0 auto}
+.ev-head-logo{display:block;background:#fff;padding:0 16px;margin-bottom:-34px;position:relative;z-index:2}
+.ev-head-logo img{width:clamp(210px,28vw,300px);height:auto;display:block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.18))}
+.ev-head-right{text-align:center;padding-bottom:26px}
+.ev-head-right h1{font-family:var(--bebas);font-weight:400;color:var(--ink);font-size:clamp(2rem,4.2vw,2.9rem);line-height:.95;letter-spacing:.02em;margin-bottom:10px}
+.ev-for{font-family:var(--bebas);color:#5a6068;font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.15;letter-spacing:.03em}
+.ev-area{font-family:var(--bebas);color:var(--red);font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:.02em;margin-top:6px}
+
+/* ---------- INTRO ---------- */
+.ev-intro{text-align:center;padding-top:clamp(40px,5vw,54px);padding-bottom:18px}
+.ev-intro h2{font-family:var(--bebas);font-weight:400;color:var(--ink);font-size:clamp(1.9rem,4.4vw,2.8rem);letter-spacing:.02em;line-height:1;margin-bottom:10px}
+.ev-intro p{font-family:var(--mont);font-weight:600;color:#1f2328;font-size:clamp(.98rem,1.9vw,1.15rem);max-width:640px;margin:0 auto;line-height:1.45}
+
+/* ---------- TWO CARDS ---------- */
+.ev-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-bottom:22px}
+.ev-card{border:1.5px solid var(--red);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.ev-card--com{border-color:#222}
+.ev-card-head{display:flex;align-items:center;gap:16px;padding:14px 18px;background:var(--red);color:#fff}
+.ev-card--com .ev-card-head{background:#1c1c1c}
+.ev-card-badge{width:70px;height:70px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;margin:-6px 0;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.ev-card-badge .ci{width:40px;height:40px;color:var(--red)}
+.ev-card--com .ev-card-badge .ci{color:#1c1c1c}
+.ev-card-head h2{font-family:var(--bebas);font-weight:400;font-size:clamp(2rem,4vw,2.6rem);line-height:.9;letter-spacing:.02em}
+.ev-card-head small{display:block;font-family:var(--bebas);font-size:clamp(1.05rem,2vw,1.35rem);letter-spacing:.04em;opacity:.95;margin-top:4px}
+
+.ev-card-media{display:grid;grid-template-columns:1.05fr 1fr;align-items:center}
+.ev-card--com .ev-card-media{grid-template-columns:1.2fr 1fr}
+.ev-card-media img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block}
+.ev-card-media p{padding:18px 18px 18px 16px;font-size:1rem;line-height:1.65;color:#1f2328}
+
+.ev-card-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.ev-svc-h{display:flex;align-items:center;gap:14px;font-family:var(--bebas);font-weight:400;font-size:1.55rem;letter-spacing:.03em;color:var(--red);margin-bottom:10px}
+.ev-svc-h::after{content:"";flex:1;height:1.5px;background:var(--red);opacity:.55}
+.ev-card--com .ev-svc-h{color:#1f2328}
+.ev-card--com .ev-svc-h::after{display:none}
+.ev-checks{list-style:none;margin:0 0 18px;padding:0}
+.ev-checks li{position:relative;padding:3px 0 3px 26px;font-size:.95rem;line-height:1.45;color:#1f2328}
+.ev-checks li::before{
+  content:"";position:absolute;left:2px;top:7px;width:13px;height:7px;
+  border-left:2.6px solid var(--red);border-bottom:2.6px solid var(--red);transform:rotate(-45deg);
+}
+.ev-card--com .ev-checks li::before{border-color:#1f2328}
+
+/* why charge at home */
+.ev-why{margin-top:auto;border:1px solid #dcdfe3;border-radius:8px;background:#f7f8f9;padding:14px 12px 16px}
+.ev-why h3{text-align:center;font-family:var(--bebas);font-weight:400;color:var(--red);font-size:1.5rem;letter-spacing:.03em;margin-bottom:12px}
+.ev-why-row{display:grid;grid-template-columns:repeat(3,1fr)}
+.ev-why-item{text-align:center;padding:0 8px}
+.ev-why-item + .ev-why-item{border-left:1px solid #d7dade}
+.ev-why-item .ci{width:44px;height:44px;margin:0 auto 10px;color:var(--red)}
+.ev-why-item b{display:block;font-family:var(--mont);font-weight:800;font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;color:#1f2328;margin-bottom:6px;line-height:1.25}
+.ev-why-item span{display:block;font-size:.78rem;line-height:1.45;color:#3a4048}
+
+/* ideal for */
+.ev-ideal{margin-top:auto;border:1px solid #dcdfe3;border-radius:8px;background:#fff;overflow:hidden}
+.ev-ideal h3{text-align:center;font-family:var(--mont);font-weight:800;font-size:.95rem;letter-spacing:.03em;color:#1f2328;background:#f1f2f4;padding:7px;border-bottom:1px solid #e3e5e8}
+.ev-ideal-row{display:grid;padding:12px 8px}
+.ev-ideal-row--3{grid-template-columns:repeat(3,1fr);border-bottom:1px solid #e3e5e8}
+.ev-ideal-row--4{grid-template-columns:repeat(4,1fr)}
+.ev-ideal-item{text-align:center;padding:0 6px}
+.ev-ideal-item + .ev-ideal-item{border-left:1px solid #e3e5e8}
+.ev-ideal-item .ci{width:38px;height:38px;margin:0 auto 7px;color:var(--red)}
+.ev-ideal-item span{display:block;font-family:var(--mont);font-weight:800;font-size:.7rem;letter-spacing:.02em;text-transform:uppercase;color:#1f2328;line-height:1.3}
+
+/* ---------- CTA BANNER ---------- */
+.ev-cta{
+  margin:0 clamp(18px,3.2vw,34px) 18px;background:#0f0f10;border:3px solid var(--red);border-radius:10px;
+  display:grid;grid-template-columns:auto 1fr;align-items:center;gap:22px;padding:20px 28px;color:#fff;
+}
+.ev-cta > .ci{width:76px;height:76px;color:#fff}
+.ev-cta-copy{text-align:center}
+.ev-cta h2{font-family:var(--mont);font-weight:800;font-size:clamp(1.15rem,2.6vw,1.7rem);letter-spacing:.01em;line-height:1.15;margin-bottom:4px}
+.ev-cta-sub{font-family:var(--mont);font-weight:700;font-size:clamp(.95rem,1.9vw,1.15rem);margin-bottom:2px}
+.ev-cta-tag{font-family:var(--mont);font-weight:800;color:var(--red-hot);font-size:clamp(1rem,2.1vw,1.3rem);margin-bottom:8px}
+.ev-cta-row{display:flex;align-items:center;justify-content:center;gap:10px 18px;flex-wrap:wrap;font-family:var(--mont);font-weight:800;font-size:clamp(1rem,2.2vw,1.45rem)}
+.ev-cta-row a{color:#fff;display:inline-flex;align-items:center;gap:8px}
+.ev-cta-row a:hover{color:var(--gold)}
+.ev-cta-row .ci{width:22px;height:22px;color:#fff}
+.ev-cta-row .sep{opacity:.6;font-weight:600}
+
+/* ---------- TRUST STRIP ---------- */
+.ev-trust{display:grid;grid-template-columns:repeat(3,1fr);background:#f1f2f4;border-top:1px solid #e3e5e8;padding-top:16px;padding-bottom:16px}
+.ev-trust-item{display:flex;align-items:center;gap:14px;padding:4px 18px}
+.ev-trust-item + .ev-trust-item{border-left:1px solid #d7dade}
+.ev-trust-item .ci{width:38px;height:38px;color:#1f2328}
+.ev-trust-item b{display:block;font-family:var(--mont);font-weight:800;font-size:.95rem;color:#1f2328;letter-spacing:.02em}
+.ev-trust-item span{font-family:var(--mont);font-weight:600;font-size:.78rem;color:#3a4048;letter-spacing:.02em}
+
+/* ---------- FOOTER BAR ---------- */
+.ev-foot{background:#141414;color:#fff;text-align:center;padding:12px 18px 14px;font-family:var(--mont);font-weight:600;font-size:.86rem;letter-spacing:.03em;line-height:1.9}
+.ev-foot b{color:var(--red-hot);font-weight:800;margin-right:8px}
+.ev-foot a{color:#fff}
+.ev-foot a:hover{color:var(--gold)}
+.ev-foot i{font-style:normal;margin:0 8px;opacity:.8}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  .ev-head{grid-template-columns:1fr;gap:6px;text-align:center}
+  .ev-head-logo{order:-1;margin:0 auto;padding:0 12px 10px;background:none}
+  .ev-head-left,.ev-head-right{padding-bottom:18px}
+  .ev-cards{grid-template-columns:1fr}
+  .ev-trust{grid-template-columns:1fr;gap:10px}
+  .ev-trust-item + .ev-trust-item{border-left:none;border-top:1px solid #d7dade;padding-top:12px}
+}
+@media (max-width:560px){
+  .ev-card-media,.ev-card--com .ev-card-media{grid-template-columns:1fr}
+  .ev-ideal-row--4{grid-template-columns:repeat(2,1fr);gap:12px 0}
+  .ev-ideal-row--4 .ev-ideal-item:nth-child(3){border-left:none}
+  .ev-cta{grid-template-columns:1fr;text-align:center;padding:18px}
+  .ev-cta > .ci{margin:0 auto}
+}
