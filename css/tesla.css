@@ -109,7 +109,14 @@
 .ev-foot b{color:var(--red-hot);font-weight:800;margin-right:8px}
 .ev-foot a{color:#fff}
 .ev-foot a:hover{color:var(--gold)}
-.ev-foot i{font-style:normal;margin:0 8px;opacity:.8}
+.ev-foot i{font-style:normal;margin:0 2px;opacity:.8}
+.ev-foot .ev-mob{display:none}
+
+/* ---------- overflow guards (grid/flex children must be allowed to shrink) ---------- */
+.ev-sheet{width:100%;overflow:hidden}
+.ev-head > *,.ev-cards > *,.ev-card-media > *,.ev-why-row > *,.ev-ideal-row > *,
+.ev-cta > *,.ev-trust > *{min-width:0}
+.ev-sheet p,.ev-sheet li,.ev-sheet span,.ev-sheet h1,.ev-sheet h2,.ev-sheet h3{overflow-wrap:break-word}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:900px){
@@ -120,10 +127,62 @@
   .ev-trust{grid-template-columns:1fr;gap:10px}
   .ev-trust-item + .ev-trust-item{border-left:none;border-top:1px solid #d7dade;padding-top:12px}
 }
+@media (max-width:900px){
+  .ev-head,.ev-cards{grid-template-columns:minmax(0,1fr)}
+}
 @media (max-width:560px){
-  .ev-card-media,.ev-card--com .ev-card-media{grid-template-columns:1fr}
-  .ev-ideal-row--4{grid-template-columns:repeat(2,1fr);gap:12px 0}
+  /* header */
+  .ev-head{padding-top:18px;gap:0}
+  .ev-head-logo img{width:min(230px,62vw)}
+  .ev-tesla-logo{height:34px;margin-bottom:10px}
+  .ev-head-left p{font-size:.92rem}
+  .ev-head-right{border-top:1px solid #e7e7e7;padding-top:16px}
+
+  /* intro */
+  .ev-intro{padding-top:28px;padding-bottom:12px}
+  .ev-intro h2{font-size:1.7rem;line-height:1.05}
+  .ev-intro p{font-size:.95rem}
+
+  /* cards */
+  .ev-cards{gap:16px}
+  .ev-card-head{padding:12px 14px;gap:12px}
+  .ev-card-badge{width:54px;height:54px;margin:0}
+  .ev-card-badge .ci{width:30px;height:30px}
+  .ev-card-head h2{font-size:1.85rem}
+  .ev-card-head small{font-size:1rem}
+  .ev-card-media,.ev-card--com .ev-card-media{grid-template-columns:minmax(0,1fr)}
+  .ev-card-media img{min-height:0;height:auto;aspect-ratio:16/10}
+  .ev-card-media p{padding:14px 16px 4px;font-size:.95rem}
+  .ev-card-body{padding:14px 16px 18px}
+  .ev-svc-h{font-size:1.35rem;gap:10px}
+  .ev-checks li{font-size:.9rem}
+
+  /* why charge at home: stack the three */
+  .ev-why-row{grid-template-columns:minmax(0,1fr);gap:14px}
+  .ev-why-item + .ev-why-item{border-left:none;border-top:1px solid #d7dade;padding-top:14px}
+  .ev-why-item span{font-size:.85rem}
+
+  /* ideal for: 2 per row */
+  .ev-ideal-row--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ev-ideal-row--4{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 0}
   .ev-ideal-row--4 .ev-ideal-item:nth-child(3){border-left:none}
-  .ev-cta{grid-template-columns:1fr;text-align:center;padding:18px}
-  .ev-cta > .ci{margin:0 auto}
+  .ev-ideal-item span{font-size:.66rem}
+
+  /* CTA banner */
+  .ev-cta{grid-template-columns:minmax(0,1fr);text-align:center;padding:18px 14px;gap:10px;margin-left:12px;margin-right:12px}
+  .ev-cta > .ci{margin:0 auto;width:56px;height:56px}
+  .ev-cta h2{font-size:1.1rem}
+  .ev-cta-sub{font-size:.9rem}
+  .ev-cta-tag{font-size:.95rem}
+  .ev-cta-row{flex-direction:column;gap:8px;font-size:1.05rem}
+  .ev-cta-row .sep{display:none}
+
+  /* trust strip + footer */
+  .ev-trust-item{padding:4px 6px}
+  .ev-foot{font-size:.76rem;line-height:1.8;padding:14px 12px}
+  .ev-foot b{display:block;margin:0 0 4px}
+  .ev-foot br{display:none}
+  .ev-foot .ev-mob{display:inline}
+  .ev-foot a,.ev-foot{word-break:normal}
+  .ev-foot a{white-space:nowrap}
 }
